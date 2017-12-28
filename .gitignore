@@ -1,52 +1,37 @@
-# Prerequisites
-*.d
+#include <stdio.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+int main()
+{
+    int n, first=0, second=1, next, c;
+    float f1, f2, f3, golden;
+    
+    printf("Enter the number of terms \n");
+    scanf("%d",&n);
+    for (c=0; c<n; c++)
+    {
+        if (c<=1)
+        next =c;
+        else
+        {
+            next=first+second;
+            first=second;
+            second=next;
+        }
+        printf("%d\n",next);
+    }
+    
+    printf("Enter first  fibonacci number, F1: "); //any bigger number
+    scanf("%f",&f1);
+    printf("Enter second  fibonacci number (it should be immediate before of f1), F2: "); // 
+    scanf("%f",&f2);
+    
+    f3=(f1+f2);
+    
+    golden=(f3/f1);
+    
+    printf("The golden ratio of given measure: %f",golden);
+    
+    
+    
+    return 0;
+}
